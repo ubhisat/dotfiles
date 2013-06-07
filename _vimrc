@@ -1,12 +1,12 @@
 set nocompatible
-filetype on
+syntax on
 let mapleader=","
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
+let g:vundle_default_git_proto = 'git'
 
 " The bundles you install will be listed here
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -60,13 +60,13 @@ set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
                                                                                
 """" Messages, Info, Status                                                    
 " set ls=2                    " allways show status line                         
+" set laststatus=2            " Always show statusline, even if only 1 window.   
 set vb t_vb=                " Disable all bells.  I hate ringing/flashing.     
 set confirm                 " Y-N-C prompt if closing with unsaved changes.    
 set showcmd                 " Show incomplete normal mode commands as I type.  
 set report=0                " : commands always print changed line count.      
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.  
 set ruler                   " Show some info, even without statuslines.        
-set laststatus=2            " Always show statusline, even if only 1 window.   
 " set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()} 
 
 """ Searching and Patterns                                                     
@@ -100,9 +100,8 @@ augroup END
 
 " Powerline setup
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-set laststatus=2
 
-map <Leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " Python-mode
 " Activate rope
@@ -141,6 +140,7 @@ let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
+syntax on
 
 " Don't autofold code
 let g:pymode_folding = 0
@@ -153,11 +153,6 @@ set listchars=tab:»\ ,eol:¬
 " automatically change window's cwd to file's dir
 set autochdir
 
-" I'm prefer spaces to tabs
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
 " more subtle popup colors
 if has ('gui_running')
     highlight Pmenu guibg=#cccccc gui=bold
@@ -167,3 +162,5 @@ nmap <leader>c :copen<CR>
 nmap <leader>cc :cclose<CR>
 " Ack searching                                                                
 nmap <leader>a <Esc>:Ack!
+let g:jedi#related_names_command = "<leader>N"
+colorscheme navajo
