@@ -19,3 +19,8 @@ filetype plugin indent on
 
 :BundleList
 
+
+vim +BundleInstall +qall
+
+" If git install fails from BundleInstall, get the logs and use this command
+cat temp.temp | cut -f2 -d$ | grep -a --text 'git clone' | xargs -0 bash -c
