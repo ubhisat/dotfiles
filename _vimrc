@@ -164,3 +164,8 @@ nmap <leader>cc :cclose<CR>
 nmap <leader>a <Esc>:Ack!
 let g:jedi#related_names_command = "<leader>N"
 colorscheme navajo
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
