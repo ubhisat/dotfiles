@@ -17,8 +17,7 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/CSApprox'
 
-
-filetype plugin indent on
+"filetype plugin indent on
 set number                    " Display line numbers                           
 set numberwidth=1             " using only 1 column (and 1 space) while possible
 set background=dark           " We are using dark background in vim            
@@ -48,7 +47,7 @@ set foldmethod=manual       " allow us to fold on indents
 set foldlevel=99            " don't fold by default                            
                                                                                
 " don't outdent hashes                                                         
-inoremap # #                                                                   
+"inoremap # #                                                                   
 
 """" Reading/Writing                                                           
 set noautowrite             " Never write a file unless I request it.          
